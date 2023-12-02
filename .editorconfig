@@ -1,0 +1,5 @@
+[*]
+indent_style = space
+
+[*.{ts,js,json}]
+indent_size = 2

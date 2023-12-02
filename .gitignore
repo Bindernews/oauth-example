@@ -1,0 +1,5 @@
+node_modules
+dist
+# Use package-lock, even if I prefer pnpm
+pnpm-lock.yaml
+yarn.lock

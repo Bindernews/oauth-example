@@ -1,0 +1,27 @@
+{
+  "name": "oauth-helper",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "bindernews",
+  "license": "MIT",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@badgateway/oauth2-client": "^2.2.4",
+    "@tsndr/cloudflare-worker-jwt": "^2.3.2",
+    "cookie": "^0.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230914.0",
+    "@types/cookie": "^0.5.4",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.2",
+    "vitest": "^0.34.6"
+  }
+}
