@@ -27,4 +27,35 @@ export function buf2str(buf: Uint8Array): string {
   return DECODER.decode(buf);
 }
 
+/**
+ * Returns `true` iff `outer` contains every element of `inner`.
+ * @param outer array which must contain all of `inner`
+ * @param inner strict subset of `outer`
+ */
+export function hasAll<T>(outer: T[], inner: Iterable<T>): boolean {
+  for (const e of inner) {
+    if (!outer.includes(e)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Sets the key on the given request object. If the request object has
+ * a `set` method (e.g. hono `Context`), that will be called instead.
+ * 
+ * @param req The {@link Request} object, a hono `Context`, or some other
+ *            object which will be carried through the handling chain.
+ * @param key The key to set
+ * @param value the value for the key
+ */
+export function requestSet(req: Record<string,any>, key: string, value: any) {
+  if (typeof req.set === 'function') {
+    req.set(key, value);
+  } else {
+    req[key] = value;
+  }
+}
+
 export type Result<T, E> = { ok: true, value: T }|{ ok?: false, error: E };
